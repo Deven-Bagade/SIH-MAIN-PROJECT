@@ -49,8 +49,12 @@ function Bodymain() {
             <a href="https://deven-bagade.github.io/SIH-PROJECT/" target="_blank" rel="noopener noreferrer">
               <button>E-WASTE</button>
             </a>
-            <button>Chatbot</button>
-            <button>Button 2</button>
+            <Link to="/reports">
+            <button>Pickup Request</button>
+            </Link>
+            <Link to="/filedreports">
+            <button>Sumbited Reports</button>
+            </Link>
           </div>
         </div>
       </main>

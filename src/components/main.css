@@ -1,267 +1,288 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FBFFF1;
+  padding-top: 60px; /* Add padding to prevent content from being hidden behind the fixed navbar */
+}
+
+.Navbarmain {
+  width: 100%;
+  position: absolute; /* Fixes the Navbar at the top */
+  top: 0; /* Ensures it stays at the top */
+  z-index: 1000; /* Brings it on top of other elements */
+  left: 0;
+  right: 0;
+}
+
+.Navbarmain nav {
+  background-color: #1d3e2f;
+  overflow: hidden;
+}
+
+.Navbarmain nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures navbar items are spaced out */
+}
+
+.Navbarmain nav ul li {
+  float: left;
+}
+
+.Navbarmain ul li a {
+  margin-left: 30px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.logo {
+  padding: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.login {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.login img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #FBFFF1;
+}
+
+/* Toggle Button for Mobile */
+.toggle-nav {
+  display: none; /* Hide the button by default */
+  background-color: #1d3e2f;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Show the toggle button and adjust the layout for mobile view */
+@media (max-width: 768px) {
+  .toggle-nav {
+    display: block; /* Show the button in mobile view */
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #FBFFF1;
-  
-   
+
+  .Navbarmain nav ul {
+    display: none; /* Hide the menu by default */
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center items */
+    width: 100%; /* Full width */
   }
-  
-  .Navbarmain nav {
-    background-color: #1d3e2f;
-    overflow: hidden;
+
+  .Navbarmain nav ul.active {
+    display: flex; /* Show the menu when active */
   }
-  
- .Navbarmain nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
+
+  .Navbarmain ul li {
+    width: 100%; /* Makes each list item take full width */
   }
-  
- .Navbarmain nav ul li {
-    float: left;
-  }
-  
+
   .Navbarmain ul li a {
-    margin-left: 30px;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
+    padding: 10px 15px; /* Adjust padding for mobile */
+    text-align: left; /* Aligns text to the left for better readability */
   }
-  
-  .logo {
-    padding: 10px;
-  }
-  
-  .logo img {
-    height: 40px;
-  }
-  
-  .login {
-    margin-left: auto;
-    padding-right: 20px;
-  }
-   
-  .login img {
-    height: 40px;
-    vertical-align: middle;
-  }
-  
+
   .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #FBFFF1;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-  
-    .left-image {
-      width: 100%;/* Make the image take full width in mobile view */
-      height: auto; /* Maintain aspect ratio */
-      margin-bottom: 20px; /* Add some space below the image */
-    }
-    
-    .right-text {
-      margin-left: 0; /* Remove the left margin */
-      text-align: center; /* Center the text in mobile view */
-  
-  
-    }
-  }
-  
-  .left-image {
- margin-top: 10vh;
-    width: 400px;
-    height: 320px;
-    border-radius: 10px; /* Adds rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    object-fit: cover;
-    
-  }
-  
-  .right-text {
-    margin-left: 50px;
-    flex: 1;
-  }
-  
-  .right-text h1 {
-    font-size: 6vh;
-    margin-bottom: 15px;
-    animation: fadeUp 1s ease-out;
-  }
-  
-  .right-text p {
-    font-size: 3vh;
-    color: #030303;
-    opacity: 0; 
-    animation: fadeUp 1s ease-out;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-  }
-  
-  .container2 {
-    background-color: #FBFFF1;
-    display: grid;
-    opacity: 0;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 20px; 
-    padding: 100px;
-    animation: fadeUp 1s ease-out;
-    animation-delay: 0.7s;
-    animation-fill-mode: forwards;
-  }
-  
-  .sub-container21, .sub-container22 {
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    font-size: 3vh;
-    text-align: justify;
-    line-height: 1.5;
-  
-  }
-  
-  .sub-container22{
-    display: flex;
     flex-direction: column;
-    align-items: center; /* Centers buttons horizontally */
-    justify-content: center;
+    align-items: center; /* Centers items in the container */
   }
-  
-  .sub-container22 button {
-    
-    display: block;
-    width: 100%;
-    margin-bottom: 10px; 
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  .left-image {
+    width: 100%; /* Make the image take full width in mobile view */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add some space below the image */
   }
-  
-  .sub-container22 button:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.662); /* Add a subtle shadow on hover */
-    transform: translateY(-2px);
-    
+
+  .right-text {
+    margin-left: 0; /* Remove the left margin */
+    text-align: center; /* Center the text in mobile view */
   }
-  
-  /* Responsive Design for Mobile */
-  @media (max-width: 768px) {
-    .container2 {
-      grid-template-columns: 1fr; 
-    }
-  
-    .sub-container21, .sub-container22 {
-      margin-bottom: 20px;
-      
-    }
+
+  .container2 {
+    grid-template-columns: 1fr; /* Stacks grid items vertically */
   }
-  
-  
-  
-  
-  
-  .sub-container22 button {
-    background-color: #cdd5c1;
-    border-radius: 30px;
-    width: 300px;
-    height: 100px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  
-  .threebutton:hover{
-    opacity: 1;
-  }
-  
-  .threebutton:hover {
-    opacity: 0;
-  }
-  
-  footer {
-    left:0;
-    right:0;
-    position: absolute;
-    background-color: #1D3E2F;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+
+  .sub-container21, .sub-container22 {
     margin-bottom: 20px;
+    width: 100%; /* Make sure they take full width */
   }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 15px;
-  }
-  
-  .footer-section h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #f39c12;
-  }
-  
-  .footer-section ul {
-    list-style-type: none;
-  }
-  
-  .footer-section ul li {
-    margin: 8px 0;
-  }
-  
-  .footer-section ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-section ul li a:hover {
-    color: #f39c12;
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid #7f8c8d;
-    padding: 10px 0;
-    font-size: 14px;
-  }
-  
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px); /* Start slightly below the original position */
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0); /* End at the original position */
-    }
-  }
+}
 
-  .Navbarmain {
-    width: 100%;
-    position: absolute; /* Fixes the Navbar at the top */
-    top: 0; /* Ensures it stays at the top */
-    z-index: 1000; /* Brings it on top of other elements */
-    left: 0;
-    right:0;
+.left-image {
+  margin-top: 10vh;
+  width: 400px;
+  height: 320px;
+  border-radius: 10px; /* Adds rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  object-fit: cover;
+}
 
+.right-text {
+  margin-left: 50px;
+  flex: 1;
+}
+
+.right-text h1 {
+  font-size: 6vh;
+  margin-bottom: 15px;
+  animation: fadeUp 1s ease-out;
+}
+
+.right-text p {
+  font-size: 3vh;
+  color: #030303;
+  opacity: 0; 
+  animation: fadeUp 1s ease-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.container2 {
+  background-color: #FBFFF1;
+  display: grid;
+  opacity: 0;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px; 
+  padding: 100px;
+  animation: fadeUp 1s ease-out;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.sub-container21, .sub-container22 {
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 3vh;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.sub-container22 {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Centers buttons horizontally */
+  justify-content: center;
+}
+
+.sub-container22 button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px; 
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub-container22 button:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.662); /* Add a subtle shadow on hover */
+  transform: translateY(-2px);
+}
+
+.sub-container22 button {
+  background-color: #cdd5c1;
+  border-radius: 30px;
+  width: 300px;
+  height: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.threebutton:hover {
+  opacity: 1;
+}
+
+.threebutton:hover {
+  opacity: 0;
+}
+
+footer {
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: #1D3E2F;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 15px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #f39c12;
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #f39c12;
+}
+
+.footer-bottom {
+  border-top: 1px solid #7f8c8d;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below the original position */
   }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
