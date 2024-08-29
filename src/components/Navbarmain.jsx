@@ -37,14 +37,14 @@ function Navbarmain() {
                 />
               </a>
             </li>
-            <li><Link to='/'>HOME</Link></li> {/* Use Link for internal navigation */}
+            <li><Link to='/'>HOME</Link></li>
             <li><a href="#community">COMMUNITY</a></li>
             <li><Link to="/guid">GUIDELINES</Link></li>
-            <li><Link to="/news">NEWS</Link></li> {/* Use Link for internal navigation */}
+            <li><Link to="/news">NEWS</Link></li>
             <li><a href="#contact">CONTACT US</a></li>
             <li><a href="#about">ABOUT US</a></li>
             <li className="login">
-              <a href="#login" onClick={handleLoginClick}> {/* Handle login click */}
+              <a href="#login" onClick={handleLoginClick}>
                 <img
                   src="https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600nw-2227567913.jpg"
                   alt="Login"
@@ -55,7 +55,6 @@ function Navbarmain() {
         </nav>
       </header>
 
-      {/* Render modal here if isModalOpen is true */}
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
