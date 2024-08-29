@@ -3,12 +3,12 @@ import './App.css';
 import Navbarmain from './components/Navbarmain';
 import Bodymain from './components/Bodymain';
 import News from './components/News'; // Make sure News is correctly imported
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Guid from './components/Guid';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/SIH-MAIN-PROJECT">
       <Navbarmain />
       <Routes>
         
@@ -17,7 +17,7 @@ function App() {
         <Route path="/guid" element={<Guid />} />
 
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
